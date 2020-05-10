@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PermTrans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/9d911d023b.js"></script>
+
+</head>
+
+<style>
+       .zhopa{
+     position: fixed;
+     top: 10px;
+     left: 10px;
+     border-radius: 20px;
+     font-size: 30px;
+     padding: 5px;
+
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: 'PT Sans', sans-serif;
+    }
+    body{
+        min-height: 100vh;
+        height: 100%;
+
+    }
+    .header{
+        height: 20vh;
+        width: 100vw;
+        text-align: center;
+        color: #686868;
+    }
+    .bottom{
+        position: fixed;
+        bottom:20px;
+        width: 100vw;
+        text-align: center;
+        color: #686868;
+    }
+
+    .numbutton{
+        height: 60px;
+        width: 80vw;
+        background: #f2f2f2;
+        margin: auto;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        padding: 5px;
+    }
+    .button_owl_game_blue{
+        background: #0076e7;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        width: 80vw;
+        margin: auto;
+        max-height: 50px;
+
+
+    }
+    .button_owl_game_gray{
+        color: #55677d;
+        background: #e5ebf1;
+        padding: 5px;
+        border-radius: 10px;
+        text-align: center;
+        width: 90px;
+max-height: 20px;
+display: inline-block;
+margin-left: 40px;
+font-size: 20px;
+}
+
+
+   .button_owl_rand_blue{
+        background: #0076e7;
+        color: white;
+        padding: 5px;
+        border-radius: 10px;
+        text-align: center;
+        width: 80vw;
+        max-height: 20px;
+        display: inline-block;
+        font-size: 20px;
+        margin: auto;
+    }
+    .modal_card{
+        background: white;
+        min-height: 200px;
+        width: 93vw;
+        position: absolute;
+        bottom: -500px;
+        color: black;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        border-radius: 20px;
+        padding-left: 10px;
+        border: 0.4px solid #a8a8a8;
+        z-index:999;
+    }
+    #modal_button_blue{
+        background: #0076e7;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        width: 85vw;
+        position: absolute;
+        bottom: 10px;
+        max-height: 50px;
+
+
+    }
+    #modal_button_blue_top{
+        background: #0076e7;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        width: 85vw;
+        position: absolute;
+        bottom: 55px;
+        max-height: 50px;
+
+
+    }
+    #modal_button_gray{
+        color: #55677d;
+        background: #e5ebf1;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        width: 85vw;
+        position: absolute;
+        bottom: 10px;
+        max-height: 50px;
+
+    }
+    #modal_button_gray_top{
+        color: #55677d;
+        background: #e5ebf1;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        width: 85vw;
+        position: absolute;
+        bottom: 100px;
+        max-height: 50px;
+
+    }
+
+     #modal_button_gray_center{
+        color: #55677d;
+        background: #e5ebf1;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        width: 85vw;
+        position: absolute;
+        bottom: 55px;
+        max-height: 50px;
+
+    }
+     
+    #modal_content{
+      text-align: center;
+
+    }
+    #modal_buttons_three {
+        min-height: 150px;
+        display: inline-block;
+
+    }
+    #modal_buttons_two {
+        min-height: 100px;
+        display: inline-block;
+
+    }
+    #modal_buttons_one {
+        min-height: 50px;
+        display: inline-block;
+
+    }
+    #modal_p {
+        font-size: 15px;
+        margin: 4px;
+    }
+
+    #modal_h {
+        font-size: 22px;
+        font-weight: bold;
+        margin: 7px;
+
+
+    }
+
+     #modal_image_56 {
+         padding: 4px;
+      height: 50px;
+      width: 50px;
+    }
+    #modal_image_qr {
+      height: 250px;
+      width: 250px;
+    }
+
+    h1 small{
+        font-weight: normal;
+    }
+</style>
+<script>
+    function open_modal(){
+        $('#modal_card1').css('display','block');
+        $('#modal_card1').animate({'bottom':'10px'},200);
+    }
+    function open_modal2(){
+        $('#modal_card2').css('display','block');
+        $('#modal_card2').animate({'bottom':'10px'},200);
+    }
+    function close_modal(){
+       
+        setTimeout(function(){ $('#modal_card1').css('display','none'); }, 100);
+        $('#modal_card1').animate({'bottom':'-500px'},200);
+    }
+    function close_modal2(){
+        setTimeout(function(){ $('#modal_card2').css('display','none'); }, 100);
+        $('#modal_card2').animate({'bottom':'-500px'},200);
+    }
+    function close_modal3(){
+       
+       setTimeout(function(){ $('#modal_card3').css('display','none'); }, 100);
+       $('#modal_card2').animate({'bottom':'-500px'},200);
+   }
+   function open_modal3(){
+    $('#modal_card3').css('display','block');
+        $('#modal_card3').animate({'bottom':'10px'},200);
+   }
+     </script>
+<body>
+    <div class="modal_card" id="modal_card1" style="display: none;"><div id="modal_content">  <p id="modal_h">Выберите остановку   </p> </div>  <div id="modal_buttons_three"><div id = "modal_button_gray_top" onclick="opengamerand();">м/н Заозерье</div> <div id = "modal_button_gray_center" onclick="location.reload();">станция Пермь-2</div> <div id = "modal_button_blue" onclick="close_modal();">Отмена</div></div></div>
+    <div class="modal_card" id="modal_card2" style="display: none;"><div id="modal_content">  <p id="modal_h">Выберите остановку   </p> </div>  <div id="modal_buttons_three"><div id = "modal_button_gray_top" onclick="opengamerand();">Автопарк</div> <div id = "modal_button_gray_center" onclick="location.reload();">м/н Заозерье</div> <div id = "modal_button_blue" onclick="close_modal2();">Отмена</div></div></div>
+    <div class="modal_card" id="modal_card3" style="display: none;"><div id="modal_content">  <p id="modal_h">Выберите остановку   </p> </div>  <div id="modal_buttons_three"><div id = "modal_button_gray_top" onclick="opengamerand();">М/н Январский</div> <div id = "modal_button_gray_center" onclick="location.reload();">м/н Заозерье</div> <div id = "modal_button_blue" onclick="close_modal3();">Отмена</div></div></div>
+    <div class="zhopa"><i onclick="window.location.href = 'index.html'" class="fas fa-times"></i>  &nbsp;    <i class="far fa-calendar" onclick="window.location.href = '34.html'"></i></div>
+
+    <div class="header"><br><br><br><h2>м/н Январский Будни</h2></div>
+    <h1>6<small> 00 18 33 44 54</small></h1><hr>
+  <h1>7<small> 05 15 25 35 45 55</small></h1><hr>
+  <h1>8<small> 06 16 26 36 47 57</small></h1><hr>
+  <h1>9<small> 08 20 32 55</small></h1><hr>
+  <h1>10<small> 18 35 52</small></h1><hr>
+  <h1>11<small> 08 24 40 53</small></h1><hr>
+  <h1>12<small> 03 13 23 33 43 52</small></h1><hr>
+  <h1>13<small> 01 12 23 35 45 55</small></h1><hr>
+  <h1>14<small> 05 15 25 35 45 56</small></h1><hr>
+  <h1>15<small> 07 17 27 37 47 58</small></h1><hr>
+  <h1>16<small> 07 17 27 38 48 58</small></h1><hr>
+  <h1>17<small> 09 20 32 44 57</small></h1><hr>
+  <h1>18<small> 10 21 32 49 58</small></h1><hr>
+  <h1>19<small> 14 30 43 56</small></h1><hr>
+  <h1>20<small> 08 22 35 58</small></h1><hr>
+  <h1>21<small> 25 </small></h1><hr>
+  <h1>22<small> 15 </small></h1>
+
+
+
+</body>
+</html>
